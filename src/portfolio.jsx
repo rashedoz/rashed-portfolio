@@ -64,7 +64,7 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-indigo-500 selection:text-white">
-      
+      <main>
       {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-slate-950/90 backdrop-blur-md border-b border-slate-800 py-4' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
@@ -138,8 +138,11 @@ const Portfolio = () => {
                 <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
                 Based in Dhaka, Bangladesh
               </div>
+              <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+                Rashed Mazumder
+              </h1>
               <p className="text-xl lg:text-2xl text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Hey, I'm <span className="text-white font-semibold">Rashed Mazumder</span> — Software Engineer turned <span className="text-white font-semibold">Entrepreneur</span>. Building Vertical SaaS, AI Automation, and eCommerce Tech.
+                Software Engineer turned <span className="text-white font-semibold">Entrepreneur</span>. Building Vertical SaaS, AI Automation, and eCommerce Tech.
               </p>
               
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-12">
@@ -151,10 +154,10 @@ const Portfolio = () => {
                 </button>
               </div>
 
-              <div className="flex items-center justify-center lg:justify-start gap-6 text-slate-500">
-                <a href="https://www.linkedin.com/in/rashedmazumder/" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400 transition-colors"><Linkedin size={24} /></a>
-                <a href="https://x.com/RashedYaan" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Twitter size={24} /></a>
-                <a href="https://www.facebook.com/rashed.mazumder342" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors"><Facebook size={24} /></a>
+              <div className="flex items-center justify-center lg:justify-start gap-6 text-slate-500" role="list">
+                <a href="https://www.linkedin.com/in/rashedmazumder/" target="_blank" rel="noopener noreferrer" aria-label="Visit Rashed Mazumder's LinkedIn profile" className="hover:text-indigo-400 transition-colors"><Linkedin size={24} /></a>
+                <a href="https://x.com/RashedYaan" target="_blank" rel="noopener noreferrer" aria-label="Follow Rashed Mazumder on Twitter/X" className="hover:text-white transition-colors"><Twitter size={24} /></a>
+                <a href="https://www.facebook.com/rashed.mazumder342" target="_blank" rel="noopener noreferrer" aria-label="Visit Rashed Mazumder's Facebook profile" className="hover:text-cyan-400 transition-colors"><Facebook size={24} /></a>
               </div>
             </div>
 
@@ -174,8 +177,11 @@ const Portfolio = () => {
                   <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-slate-800/50 shadow-2xl backdrop-blur-sm bg-black">
                     <img 
                       src="/portrait.jpg" 
-                      alt="Rashed Mazumder" 
+                      alt="Rashed Mazumder - Software Engineer and Entrepreneur based in Dhaka, Bangladesh, building Vertical SaaS, AI Automation, and eCommerce Tech" 
                       className="w-full h-full object-contain object-center transform group-hover:scale-[1.02] transition-transform duration-700"
+                      width="400"
+                      height="600"
+                      loading="eager"
                       onError={(e) => {
                         e.target.onerror = null;
                         e.target.src = "https://placehold.co/400x600/1e293b/white?text=RM";
@@ -195,16 +201,16 @@ const Portfolio = () => {
                 </div>
                 
                 {/* Floating Badges */}
-                <div className="absolute -right-4 top-10 bg-slate-800/90 backdrop-blur-md border border-slate-700 p-3 rounded-xl shadow-xl animate-bounce delay-100 hover:scale-110 transition-transform">
-                  <Code className="text-cyan-400" size={24} />
+                <div className="absolute -right-4 top-10 bg-slate-800/90 backdrop-blur-md border border-slate-700 p-3 rounded-xl shadow-xl animate-bounce delay-100 hover:scale-110 transition-transform" aria-label="Software Development">
+                  <Code className="text-cyan-400" size={24} aria-hidden="true" />
                 </div>
-                <div className="absolute -left-4 bottom-20 bg-slate-800/90 backdrop-blur-md border border-slate-700 p-3 rounded-xl shadow-xl animate-bounce delay-300 hover:scale-110 transition-transform">
-                  <Rocket className="text-indigo-500" size={24} />
+                <div className="absolute -left-4 bottom-20 bg-slate-800/90 backdrop-blur-md border border-slate-700 p-3 rounded-xl shadow-xl animate-bounce delay-300 hover:scale-110 transition-transform" aria-label="Entrepreneurship">
+                  <Rocket className="text-indigo-500" size={24} aria-hidden="true" />
                 </div>
                 
                 {/* Additional Floating Element */}
-                <div className="absolute top-1/2 -right-8 hidden lg:block bg-slate-800/80 backdrop-blur-md border border-slate-700 p-2 rounded-lg shadow-lg animate-pulse">
-                  <TrendingUp className="text-emerald-400" size={20} />
+                <div className="absolute top-1/2 -right-8 hidden lg:block bg-slate-800/80 backdrop-blur-md border border-slate-700 p-2 rounded-lg shadow-lg animate-pulse" aria-label="Growth">
+                  <TrendingUp className="text-emerald-400" size={20} aria-hidden="true" />
                 </div>
               </div>
             </div>
@@ -280,7 +286,7 @@ const Portfolio = () => {
           <div className="grid md:grid-cols-2 gap-8">
             
             {/* MiraiLit */}
-            <a href="https://mirailit.com/" target="_blank" rel="noopener noreferrer" className="group relative bg-slate-900 rounded-3xl p-8 border border-slate-800 hover:border-indigo-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10 block">
+            <a href="https://mirailit.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit MiraiLit Limited - Full-cycle software development agency" className="group relative bg-slate-900 rounded-3xl p-8 border border-slate-800 hover:border-indigo-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10 block">
               <div className="absolute top-6 right-6 p-2 bg-slate-800 rounded-lg group-hover:bg-indigo-500 group-hover:text-white transition-colors">
                 <Globe size={24} />
               </div>
@@ -467,15 +473,15 @@ const Portfolio = () => {
             Whether it's scaling eCommerce infrastructure or discussing the future of AI automation, I'm always open to interesting conversations.
           </p>
           
-          <a href="https://calendly.com/mazumder-8100/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 text-white font-bold rounded-full hover:bg-indigo-700 transition-all transform hover:scale-105 shadow-lg shadow-indigo-500/25 mb-16">
-            <Calendar size={20} /> Book a Consultation
+          <a href="https://calendly.com/mazumder-8100/30min" target="_blank" rel="noopener noreferrer" aria-label="Book a 30-minute consultation with Rashed Mazumder" className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 text-white font-bold rounded-full hover:bg-indigo-700 transition-all transform hover:scale-105 shadow-lg shadow-indigo-500/25 mb-16">
+            <Calendar size={20} aria-hidden="true" /> Book a Consultation
           </a>
 
-          <div className="flex justify-center gap-8 mb-12">
-             <a href="https://www.linkedin.com/in/rashedmazumder/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-indigo-400 transition-colors"><Linkedin size={24} /></a>
-             <a href="https://x.com/RashedYaan" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition-colors"><Twitter size={24} /></a>
-             <a href="https://www.facebook.com/rashed.mazumder342" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-cyan-400 transition-colors"><Facebook size={24} /></a>
-             <a href="https://mirailit.com/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-emerald-400 transition-colors"><Globe size={24} /></a>
+          <div className="flex justify-center gap-8 mb-12" role="list">
+             <a href="https://www.linkedin.com/in/rashedmazumder/" target="_blank" rel="noopener noreferrer" aria-label="Visit Rashed Mazumder's LinkedIn profile" className="text-slate-500 hover:text-indigo-400 transition-colors"><Linkedin size={24} aria-hidden="true" /></a>
+             <a href="https://x.com/RashedYaan" target="_blank" rel="noopener noreferrer" aria-label="Follow Rashed Mazumder on Twitter/X" className="text-slate-500 hover:text-white transition-colors"><Twitter size={24} aria-hidden="true" /></a>
+             <a href="https://www.facebook.com/rashed.mazumder342" target="_blank" rel="noopener noreferrer" aria-label="Visit Rashed Mazumder's Facebook profile" className="text-slate-500 hover:text-cyan-400 transition-colors"><Facebook size={24} aria-hidden="true" /></a>
+             <a href="https://mirailit.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit MiraiLit Limited company website" className="text-slate-500 hover:text-emerald-400 transition-colors"><Globe size={24} aria-hidden="true" /></a>
           </div>
 
           <div className="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-600 text-sm">
@@ -486,6 +492,7 @@ const Portfolio = () => {
           </div>
         </div>
       </footer>
+      </main>
     </div>
   );
 };
