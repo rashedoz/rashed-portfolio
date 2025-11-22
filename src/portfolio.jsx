@@ -138,11 +138,11 @@ const Portfolio = () => {
                 <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
                 Based in Dhaka, Bangladesh
               </div>
-              <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-                Rashed Mazumder
+              <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight sr-only">
+                Rashed Mazumder - Software Engineer & Entrepreneur
               </h1>
               <p className="text-xl lg:text-2xl text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Software Engineer turned <span className="text-white font-semibold">Entrepreneur</span>. Building Vertical SaaS, AI Automation, and eCommerce Tech.
+                Hey, I'm <span className="text-white font-semibold">Rashed Mazumder</span> — Software Engineer turned <span className="text-white font-semibold">Entrepreneur</span>. Building Vertical SaaS, AI Automation, and eCommerce Tech.
               </p>
               
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-12">
