@@ -14,7 +14,10 @@ import {
   ExternalLink,
   Menu,
   X,
-  MapPin
+  MapPin,
+  Twitter,
+  Facebook,
+  Calendar
 } from 'lucide-react';
 
 const Portfolio = () => {
@@ -65,8 +68,8 @@ const Portfolio = () => {
       {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-slate-950/90 backdrop-blur-md border-b border-slate-800 py-4' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <div className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent cursor-pointer" onClick={() => scrollToSection('hero')}>
-            RM.
+          <div className="text-xl lg:text-2xl font-bold cursor-pointer" onClick={() => scrollToSection('hero')}>
+            <span className="text-white">Rashed</span> <span className="text-slate-500">Mazumder</span>
           </div>
 
           {/* Desktop Nav */}
@@ -135,12 +138,8 @@ const Portfolio = () => {
                 <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
                 Based in Dhaka, Bangladesh
               </div>
-              <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 text-white">
-                Rashed <span className="text-slate-500">Mazumder</span>
-              </h1>
               <p className="text-xl lg:text-2xl text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Software Engineer turned <span className="text-white font-semibold">Entrepreneur</span>. 
-                Building Vertical SaaS, AI Automation, and eCommerce Tech.
+                Hey, I'm <span className="text-white font-semibold">Rashed Mazumder</span> — Software Engineer turned <span className="text-white font-semibold">Entrepreneur</span>. Building Vertical SaaS, AI Automation, and eCommerce Tech.
               </p>
               
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-12">
@@ -153,34 +152,59 @@ const Portfolio = () => {
               </div>
 
               <div className="flex items-center justify-center lg:justify-start gap-6 text-slate-500">
-                <a href="#" className="hover:text-white transition-colors"><Github size={24} /></a>
-                <a href="#" className="hover:text-indigo-400 transition-colors"><Linkedin size={24} /></a>
-                <a href="#" className="hover:text-cyan-400 transition-colors"><Mail size={24} /></a>
+                <a href="https://www.linkedin.com/in/rashedmazumder/" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400 transition-colors"><Linkedin size={24} /></a>
+                <a href="https://x.com/RashedYaan" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Twitter size={24} /></a>
+                <a href="https://www.facebook.com/rashed.mazumder342" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors"><Facebook size={24} /></a>
               </div>
             </div>
 
             {/* Hero Image */}
             <div className="flex-1 order-1 lg:order-2 flex justify-center relative">
-              <div className="relative w-72 h-72 lg:w-96 lg:h-96">
-                <div className="absolute inset-0 bg-indigo-500 rounded-full blur-2xl opacity-20 animate-pulse"></div>
-                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-slate-800 shadow-2xl">
-                   <img 
-                    src="./Subject.jpg" 
-                    alt="Rashed Mazumder" 
-                    className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.src = "https://placehold.co/400x400/1e293b/white?text=RM";
-                    }}
-                  />
+              <div className="relative w-64 h-[85vh] max-h-[600px] lg:w-80 lg:h-[90vh] lg:max-h-[700px]">
+                {/* Glow Effects */}
+                <div className="absolute -inset-4 bg-gradient-to-br from-indigo-500/30 via-cyan-500/20 to-transparent blur-3xl rounded-3xl opacity-60 animate-pulse"></div>
+                <div className="absolute -inset-2 bg-indigo-600/20 blur-xl rounded-2xl"></div>
+                
+                {/* Image Container with Effects */}
+                <div className="relative w-full h-full group">
+                  {/* Border Gradient Effect */}
+                  <div className="absolute -inset-0.5 bg-gradient-to-br from-indigo-500/50 via-cyan-500/30 to-transparent rounded-2xl blur-sm opacity-75 group-hover:opacity-100 transition-opacity"></div>
+                  
+                  {/* Main Image Container */}
+                  <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-slate-800/50 shadow-2xl backdrop-blur-sm bg-black">
+                    <img 
+                      src="/portrait.jpg" 
+                      alt="Rashed Mazumder" 
+                      className="w-full h-full object-contain object-center transform group-hover:scale-[1.02] transition-transform duration-700"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = "https://placehold.co/400x600/1e293b/white?text=RM";
+                      }}
+                    />
+                    
+                    {/* Subtle Overlay Gradient for Depth */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent pointer-events-none"></div>
+                    
+                    {/* Shine Effect on Hover */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none"></div>
+                  </div>
+                  
+                  {/* Decorative Corner Elements */}
+                  <div className="absolute -top-2 -right-2 w-6 h-6 border-t-2 border-r-2 border-indigo-500/50 rounded-tr-lg"></div>
+                  <div className="absolute -bottom-2 -left-2 w-6 h-6 border-b-2 border-l-2 border-cyan-500/50 rounded-bl-lg"></div>
                 </div>
                 
                 {/* Floating Badges */}
-                <div className="absolute -right-4 top-10 bg-slate-800/90 backdrop-blur border border-slate-700 p-3 rounded-xl shadow-xl animate-bounce delay-100">
+                <div className="absolute -right-4 top-10 bg-slate-800/90 backdrop-blur-md border border-slate-700 p-3 rounded-xl shadow-xl animate-bounce delay-100 hover:scale-110 transition-transform">
                   <Code className="text-cyan-400" size={24} />
                 </div>
-                <div className="absolute -left-4 bottom-20 bg-slate-800/90 backdrop-blur border border-slate-700 p-3 rounded-xl shadow-xl animate-bounce delay-300">
+                <div className="absolute -left-4 bottom-20 bg-slate-800/90 backdrop-blur-md border border-slate-700 p-3 rounded-xl shadow-xl animate-bounce delay-300 hover:scale-110 transition-transform">
                   <Rocket className="text-indigo-500" size={24} />
+                </div>
+                
+                {/* Additional Floating Element */}
+                <div className="absolute top-1/2 -right-8 hidden lg:block bg-slate-800/80 backdrop-blur-md border border-slate-700 p-2 rounded-lg shadow-lg animate-pulse">
+                  <TrendingUp className="text-emerald-400" size={20} />
                 </div>
               </div>
             </div>
@@ -194,17 +218,17 @@ const Portfolio = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">The Journey Snapshot</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">A Bit About My Journey</h2>
               <div className="w-20 h-1 bg-indigo-500 mx-auto rounded-full"></div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 text-slate-300 text-lg leading-relaxed">
                 <p>
-                  <span className="text-white font-semibold text-xl">From Code to Company.</span> I started my career with a strong foundation in Computer Science, delivering over 365+ digital solutions. But writing code was just the beginning.
+                  I started out with a solid Computer Science foundation and spent years deep in the trenches—shipping products, fixing messy problems, and learning how tech actually works in the real world. Over time, I became more of a 360° builder than just a developer: from product and development to automation, growth, and even marketing when the job needed it.
                 </p>
                 <p>
-                  The shift happened when I realized the power of combining engineering precision with product vision. Today, I don't just build software; I build <span className="text-indigo-400 font-medium">businesses</span> that solve real problems in eCommerce, HR Tech, and Automation.
+                  The real shift came when I realized I didn't just enjoy writing code—I loved turning ideas into something people would pay for and rely on. These days, I focus on building businesses and vertical products that solve real problems in eCommerce, HR Tech, and AI-driven automation.
                 </p>
                 <div className="flex flex-wrap gap-3 pt-4">
                   {['Vertical SaaS', 'AI Automation', 'eCommerce Tech', 'Product Strategy'].map((tag) => (
@@ -221,16 +245,16 @@ const Portfolio = () => {
                   <p className="text-sm text-slate-400 uppercase tracking-wider">Years Exp</p>
                 </div>
                 <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 transform hover:-translate-y-1 transition-transform delay-75">
-                  <h3 className="text-4xl font-bold text-indigo-400 mb-2">365+</h3>
-                  <p className="text-sm text-slate-400 uppercase tracking-wider">Solutions Delivered</p>
+                  <h3 className="text-4xl font-bold text-indigo-400 mb-2">10+</h3>
+                  <p className="text-sm text-slate-400 uppercase tracking-wider">Vertical SaaS delivered</p>
                 </div>
                 <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 transform hover:-translate-y-1 transition-transform delay-100">
                   <h3 className="text-4xl font-bold text-cyan-400 mb-2">18+</h3>
                   <p className="text-sm text-slate-400 uppercase tracking-wider">Team Size</p>
                 </div>
                 <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 transform hover:-translate-y-1 transition-transform delay-150">
-                  <h3 className="text-4xl font-bold text-white mb-2">4</h3>
-                  <p className="text-sm text-slate-400 uppercase tracking-wider">Ventures Launched</p>
+                  <h3 className="text-4xl font-bold text-white mb-2">4+</h3>
+                  <p className="text-sm text-slate-400 uppercase tracking-wider">Ventures launched</p>
                 </div>
               </div>
             </div>
@@ -256,7 +280,7 @@ const Portfolio = () => {
           <div className="grid md:grid-cols-2 gap-8">
             
             {/* MiraiLit */}
-            <div className="group relative bg-slate-900 rounded-3xl p-8 border border-slate-800 hover:border-indigo-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10">
+            <a href="https://mirailit.com/" target="_blank" rel="noopener noreferrer" className="group relative bg-slate-900 rounded-3xl p-8 border border-slate-800 hover:border-indigo-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10 block">
               <div className="absolute top-6 right-6 p-2 bg-slate-800 rounded-lg group-hover:bg-indigo-500 group-hover:text-white transition-colors">
                 <Globe size={24} />
               </div>
@@ -273,7 +297,7 @@ const Portfolio = () => {
                 <span className="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">Digital Marketing</span>
                 <span className="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">BPO</span>
               </div>
-            </div>
+            </a>
 
             {/* Aplicaro */}
             <div className="group relative bg-slate-900 rounded-3xl p-8 border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10">
@@ -443,14 +467,15 @@ const Portfolio = () => {
             Whether it's scaling eCommerce infrastructure or discussing the future of AI automation, I'm always open to interesting conversations.
           </p>
           
-          <a href="mailto:hello@example.com" className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 text-white font-bold rounded-full hover:bg-indigo-700 transition-all transform hover:scale-105 shadow-lg shadow-indigo-500/25 mb-16">
-            <Mail size={20} /> Get in Touch
+          <a href="https://calendly.com/mazumder-8100/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 text-white font-bold rounded-full hover:bg-indigo-700 transition-all transform hover:scale-105 shadow-lg shadow-indigo-500/25 mb-16">
+            <Calendar size={20} /> Book a Consultation
           </a>
 
           <div className="flex justify-center gap-8 mb-12">
-             <a href="#" className="text-slate-500 hover:text-white transition-colors"><Github size={24} /></a>
-             <a href="#" className="text-slate-500 hover:text-indigo-400 transition-colors"><Linkedin size={24} /></a>
-             <a href="#" className="text-slate-500 hover:text-cyan-400 transition-colors"><Globe size={24} /></a>
+             <a href="https://www.linkedin.com/in/rashedmazumder/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-indigo-400 transition-colors"><Linkedin size={24} /></a>
+             <a href="https://x.com/RashedYaan" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition-colors"><Twitter size={24} /></a>
+             <a href="https://www.facebook.com/rashed.mazumder342" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-cyan-400 transition-colors"><Facebook size={24} /></a>
+             <a href="https://mirailit.com/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-emerald-400 transition-colors"><Globe size={24} /></a>
           </div>
 
           <div className="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-600 text-sm">
